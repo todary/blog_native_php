@@ -30,7 +30,7 @@ include $path
                             <tr class="gradeU">
                                 <td><?= $article['title'] ?></td>
                                 <td><?= $article['text'] ?></td>
-                                <td><?= $article['image'] ?></td>
+                                <td><img src="<?= $article['image'] ?>" /></td>
                                 <td>
                                     <a href="<?= Index ?>ArticleController/editArticleAction&articleId=<?= $article['id'] ?>"
                                        class="updaterow btn btn-primary btn-primary"><i
