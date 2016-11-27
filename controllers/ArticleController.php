@@ -10,13 +10,14 @@ class ArticleController
             // store data in database ...
             $articlModel = new Article;
             $articlModel->title = $_POST["title"];
+            $articlModel->text = $_POST["text"];
+            $articlModel->image = $_POST["image"];
             if ($articlModel->insert_data() >= 1) {
-                echo "success";
+                $this->listArticlesAction();
             }
         } else {
-            $articlModel = new Article;
-            $articlModel->insert_data();
-            //require "views/article/add_articles.php";
+
+            require "views/article/add_articles.php";
         }
     }
 
@@ -28,6 +29,7 @@ class ArticleController
         // Step#2 display result in certain view ..
         include "views/article/list_articles.php";
     }
+
     function listArticleAction()
     {
         // Step#1 get|insert data in|from model ..
@@ -39,12 +41,32 @@ class ArticleController
 
     function editArticleAction()
     {
+        if (strtolower($_SERVER['REQUEST_METHOD']) == "post") {
+            // store data in database ...
+            $articlModel = new Article($_GET['articleId']);
+            $articlModel->title = $_POST["title"];
+            $articlModel->text = $_POST["text"];
+            $articlModel->image = $_POST["image"];
+            if ($articlModel->update_data() >= 1) {
+                $this->listArticlesAction();
+            }
+        } else {
+            $articlModel = new Article($_GET['articleId']);
+            require "views/article/editForm.php";
+        }
 
     }
 
     function deleteArticleAction()
     {
+        if(isset($_GET['articleId']))
+        {
+            $articlModel = new Article;
+            $articlModel->id=$_GET['articleId'];
+            $articlModel->delete_data();
+            $this->listArticlesAction();
 
+        }
     }
 
 }
