@@ -16,7 +16,7 @@ class ArticleController
         } else {
             $articlModel = new Article;
             $articlModel->insert_data();
-            //require "views/article/add_category.php";
+            //require "views/article/add_articles.php";
         }
     }
 

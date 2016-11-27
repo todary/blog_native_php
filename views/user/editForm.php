@@ -4,20 +4,24 @@
     <div class="col-lg-12">
         <div class="panel panel-default" >
             <div class="panel-heading">
-                Edit User <?=$userEdit->User_Char;?>
+                Edit User <?=$UserModel->username;?>
             </div>
             <div class="panel-body">
                 <div class="row">
                     <!-- /.col-lg-6 (nested) -->
                     <div class="col-lg-6">
-                        <form role="form" method="post" action="<?= Index ?>UserController/editUsersAction&userId=<?= $userEdit->UserID?>">
+                        <form role="form" method="post" action="<?= Index ?>UserController/editUserAction&userId=<?= $UserModel->id?>">
                             <div class="form-group">
                                 <label>User Char</label>
-                                <input name="User_Char" class="form-control" value="<?=$userEdit->User_Char;?>">
+                                <input name="name" class="form-control" value="<?=$UserModel->name;?>">
                             </div>
                             <div class="form-group">
                                 <label>User Mail</label>
-                                <input name="User_Mail" class="form-control"  value="<?=$userEdit->User_Mail;?>">
+                                <input name="username" class="form-control"  value="<?=$UserModel->username;?>">
+                            </div>
+                            <div class="form-group">
+                                <label>User Mail</label>
+                                <input name="password" class="form-control"  value="<?=$UserModel->password;?>">
                             </div>
 
                             <button type="submit" class="btn btn-success"> Submit </button>

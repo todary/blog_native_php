@@ -19,45 +19,8 @@ include $path
                     </div>
 
                 <?php } ?>
-                <div class="row" id="adduser" style="display: none;">
-                    <div class="col-lg-12">
-                        <div class="panel panel-default" >
-                            <div class="panel-body">
-                                <div class="row">
-                                    <!-- /.col-lg-6 (nested) -->
-                                    <div class="col-lg-6">
-                                        <form role="form" method="post" action="<?= Index ?>UserController/adduserAction">
-                                            <div class="form-group">
-                                                <label>User Char</label>
-                                                <input name="User_Char" class="form-control" >
-                                            </div>
-                                            <div class="form-group">
-                                                <label>User Name</label>
-                                                <input name="User_Name" class="form-control" >
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Password</label>
-                                                <input type="password" name="User_Pass" class="form-control"  >
-                                            </div>
-                                            <div class="form-group">
-                                                <label>User Mail</label>
-                                                <input name="User_Mail" type="email" autofocus=""class="form-control"  >
-                                            </div>
-
-                                            <button type="submit" class="btn btn-success"> Submit </button>
-                                            <!--                                                    <a href="--><?//= Index ?><!--UserController/deleteUsersAction&userId?>" class="btn btn-success"> submit </a>-->
-                                        </form>
-                                    </div>
-                                    <!-- /.col-lg-6 (nested) -->
-                                </div>
-                                <!-- /.row (nested) -->
-                            </div>
-                            <!-- /.panel-body -->
-                        </div>
-                        <!-- /.panel -->
-                    </div>
-                    <!-- /.col-lg-12 -->
-                </div>
+                <a  class="btn btn-success addUserButtom" href="<?= Index ?>UserController/addUserAction"> add user </a>
+       
 
                 <table width="100%" class="text-center table table-striped table-bordered table-hover"
                        id="dataTables-example">

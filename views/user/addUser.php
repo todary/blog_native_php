@@ -7,25 +7,22 @@
                 <div class="row">
                     <!-- /.col-lg-6 (nested) -->
                     <div class="col-lg-6">
-                        <form role="form" method="post" action="">
+                        <form role="form" method="post" action="<?= Index ?>UserController/adduserAction">
                             <div class="form-group">
                                 <label>User Char</label>
-                                <input name="User_Char" class="form-control" >
+                                <input name="name" class="form-control" >
                             </div>
                             <div class="form-group">
                                 <label>User Name</label>
-                                <input name="User_Name" class="form-control" >
+                                <input name="username" class="form-control" >
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
-                                <input type="password" name="User_Pass" class="form-control"  >
-                            </div>
-                            <div class="form-group">
-                                <label>User Mail</label>
-                                <input name="User_Mail" class="form-control"  >
+                                <input type="password" name="password" class="form-control"  >
                             </div>
 
                             <button type="submit" class="btn btn-success"> Submit </button>
+                            <!--                                                    <a href="--><?//= Index ?><!--UserController/deleteUsersAction&userId?>" class="btn btn-success"> submit </a>-->
                         </form>
                     </div>
                     <!-- /.col-lg-6 (nested) -->

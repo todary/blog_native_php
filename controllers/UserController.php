@@ -82,18 +82,20 @@ class UserController
 
     function addUserAction()
     {
-        die('heee');
+
         if (strtolower($_SERVER['REQUEST_METHOD']) == "post") {
             // store data in database ...
             $UserModel = new User;
-            $UserModel->title = $_POST["title"];
+            $UserModel->name = $_POST["name"];
+            $UserModel->username = $_POST["username"];
+            $UserModel->password = $_POST["password"];
             if ($UserModel->insert_data() >= 1) {
-                echo "success";
+                $this->listUsersAction();
             }
         } else {
-            $UserModel = new User;
-            $UserModel->insert_data();
-            //require "views/article/add_category.php";
+//            $UserModel = new User;
+//            $UserModel->insert_data();
+            require "views/user/addUser.php";
         }
     }
 
@@ -120,10 +122,31 @@ class UserController
     function editUserAction()
     {
 
+        if (strtolower($_SERVER['REQUEST_METHOD']) == "post") {
+            // store data in database ...
+            $UserModel = new User($_GET['userId']);
+            $UserModel->name = $_POST["name"];
+            $UserModel->username = $_POST["username"];
+            $UserModel->password = $_POST["password"];
+            if ($UserModel->update_data() >= 1) {
+                $this->listUsersAction();
+            }
+        } else {
+            $UserModel = new User($_GET['userId']);
+            require "views/user/editForm.php";
+        }
     }
 
     function deleteUserAction()
     {
+        if(isset($_GET['userId']))
+        {
+            $UserModel = new User;
+            $UserModel->id=$_GET['userId'];
+            $UserModel->delete_data();
+            $this->listUsersAction();
+
+        }
 
     }
 

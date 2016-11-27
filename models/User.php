@@ -15,14 +15,10 @@ class User extends My_Model
 
     public function __construct($id = -1)
     {
-//        if ($id != -1) {
-//            $this->id = $id;
-//            $result = $this->list_data_id();
-//            $article = mysqli_fetch_assoc($result);
-//            $this->title = $article['title'];
-//            $this->test = $article['test'];
-//            $this->image = $article['image'];
-//        }
+        if ($id != -1) {
+            $this->id = $id;
+            $result = $this->list_data_id();
+        }
     }
 
 

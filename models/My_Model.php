@@ -44,8 +44,11 @@ class My_Model
         while ($row = mysqli_fetch_assoc($reslut)) {
             foreach ($this->fields as $column) {
                 $this->$column = $row[$column];
+
             }
+           
         }
+
         return $row;
     }
 
