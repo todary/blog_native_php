@@ -71,4 +71,21 @@ class My_Model
         return $mansDb->query("delete  from " . $this->table_name . " where {$this->primary_key}={$this->$primary_key}");
     }
 
+    function search()
+    {
+        global $mansDb;
+        $field_search = $this->field_search;
+        $reslut = $mansDb->query("select * from " . $this->table_name . " where {$this->field_search}='{$this->$field_search}'");
+        if ($reslut->num_rows) {
+            while ($row = mysqli_fetch_assoc($reslut)) {
+                foreach ($this->fields as $column) {
+                    $this->$column = $row[$column];
+                }
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

@@ -1,4 +1,7 @@
-<?php include "views/layout/header.php";?>
+<?php
+$path = VIEW_DIR . DS . 'layout' . DS . 'header.php';
+include $path
+?>
 <!-- /.row -->
 <div class="row">
     <div class="col-lg-12">
@@ -60,22 +63,24 @@
                        id="dataTables-example">
                     <thead>
                     <tr>
-                        <th>User Name</th>
                         <th>Name</th>
+                        <th>User Name</th>
+                        <th>Password</th>
                         <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <?php foreach ($reslut as $user) { ?>
+                    <?php foreach ($result as $user) { ?>
 
                         <tr class="gradeU">
-                            <td><?= $user['User_Name'] ?></td>
-                            <td><?= $user['User_Char'] ?></td>
+                            <td><?= $user['name'] ?></td>
+                            <td><?= $user['username'] ?></td>
+                            <td><?= $user['password'] ?></td>
                             <td>
-                                <a href="<?= Index ?>UserController/editUsersAction&userId=<?= $user['UserID'] ?>"
+                                <a href="<?= Index ?>UserController/editUserAction&userId=<?= $user['id'] ?>"
                                    class="updaterow btn btn-primary btn-primary"><i
                                         class="glyphicon glyphicon-pencil"></i> Edit </a>
-                                <a href="<?= Index ?>UserController/deleteUsersAction&userId=<?= $user['UserID'] ?>" class="updaterow btn btn-primary btn-danger"><i
+                                <a href="<?= Index ?>UserController/deleteUserAction&userId=<?= $user['id'] ?>" class="updaterow btn btn-primary btn-danger"><i
                                         class="glyphicon glyphicon-trash"></i> Delete </a>
                             </td>
 
@@ -93,4 +98,7 @@
     <!-- /.col-lg-12 -->
 </div>
 
-<?php include "views/layout/footer.php";?>
+<?php
+$path = VIEW_DIR . DS . 'layout' . DS . 'footer.php';
+include $path
+?>

@@ -12,14 +12,13 @@ class UserController
         } else {
             if (strtolower($_SERVER['REQUEST_METHOD']) == "post") {
                 $user = new  User();
-                $user->User_Name = $_POST['User_Name'];
+                $user->username = $_POST['User_Name'];
                 if ($user->check()) {
-                    $user->User_Pass = $_POST['User_Pass'];
+                    $user->password = $_POST['User_Pass'];
 
                     if ($user->login()) {
-                        $_SESSION['user'] = $user->User_Name;
-                        $_SESSION['id'] = $user->UserID;
-                        $_SESSION['isDeleted'] = $user->User_IsDeleted;
+                        $_SESSION['user'] = $user->username;
+                        $_SESSION['id'] = $user->id;
                         require "views/user/profiel.php";
                     } else {
                         echo 'password not correct';
@@ -83,6 +82,7 @@ class UserController
 
     function addUserAction()
     {
+        die('heee');
         if (strtolower($_SERVER['REQUEST_METHOD']) == "post") {
             // store data in database ...
             $UserModel = new User;
@@ -102,8 +102,9 @@ class UserController
         // Step#1 get|insert data in|from model ..
         $UserModel = new User;
         $result = $UserModel->list_data();
+      
         // Step#2 display result in certain view ..
-        include "views/article/list_articles.php";
+        include "views/user/user.php";
     }
 
     function listUserAction()
@@ -111,8 +112,9 @@ class UserController
         // Step#1 get|insert data in|from model ..
         $UserModel = new User;
         $result = $UserModel->list_data();
+
         // Step#2 display result in certain view ..
-        include "views/article/list_articl.php";
+        include "views/user/user.php";
     }
 
     function editUserAction()

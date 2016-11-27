@@ -14,6 +14,7 @@ class Router {
                 // to check if function exists in controller class ..
                 if (is_callable($parts[0], $parts[1])) {
                     // call action in certain controller ..
+
                     $controller->$parts[1]();
                 } else {
                     throw new Exception("Function not Found!!");

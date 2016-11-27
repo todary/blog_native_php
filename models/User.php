@@ -3,7 +3,7 @@
 class User extends My_Model
 {
 
-    protected $table_name = "article";
+    protected $table_name = "user";
     protected $primary_key = "id";
     public $id;
     public $name;

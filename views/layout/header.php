@@ -11,23 +11,20 @@
 
     <title>SB Admin 2 - Bootstrap Admin Theme</title>
 
+    <!-- Bootstrap Core CSS -->
     <link href="cdn/css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
     <link href="cdn/css/metisMenu/metisMenu.min.css" rel="stylesheet">
 
-    <!-- DataTables CSS -->
-    <link href="cdn/css/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
-
-    <!-- DataTables Responsive CSS -->
-    <link href="cdn/css/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
-
     <!-- Custom CSS -->
     <link href="cdn/css/sb-admin-2.css" rel="stylesheet">
 
-    <!-- Custom Fonts -->
-    <link href="cdn/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Morris Charts CSS -->
+    <link href="cdn/css/morris.css" rel="stylesheet">
 
+    <!-- Custom Fonts -->
+    <link href="cdn/css/fontawesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -51,7 +48,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+            <a class="navbar-brand" href="index.html">SB Admin panel</a>
         </div>
         <!-- /.navbar-header -->
 
@@ -286,28 +283,16 @@
                         <!-- /input-group -->
                     </li>
                     <li>
-                        <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        <a href="<?= Index ?>UserController/loginAction"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    </li>
+
+                    <li>
+                        <a href="<?= Index ?>UserController/listUsersAction"><i class="fa fa-table fa-fw"></i> Users
+                        </a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> DTD <span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="flot.html">DTD 2008</a>
-                            </li>
-                            <li>
-                                <a href="morris.html">DTD 2009</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-edit fa-fw"></i> Hint </a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-files-o fa-fw"></i> Look up Table</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-table fa-fw"></i> Users </a>
+                        <a href="<?= Index ?>ArticleController/listArticlesAction"><i class="fa fa-table fa-fw"></i> Articles
+                        </a>
                     </li>
 
                 </ul>
@@ -316,13 +301,5 @@
         </div>
         <!-- /.navbar-static-side -->
     </nav>
-
     <div id="page-wrapper">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="row">
-                    <h1 class="page-header col-lg-9">Tables</h1>
-                    <button class="addUserButtom page-header btn btn-success col-lg-2 top-left"><i class="glyphicon glyphicon-user"></i> Add User </button>
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
+

@@ -6,9 +6,9 @@ class Article extends My_Model {
     protected $primary_key = "id";
     public $id;
     public $title;
-    public $test;
+    public $text;
     public $image;
-    protected $fields = array("title", "test", "image");
+    protected $fields = array("title", "text", "image");
 //    public $fields2 = array("title", "test", "image");
 
     public function __construct($id = -1) {
