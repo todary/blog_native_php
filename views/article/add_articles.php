@@ -7,7 +7,7 @@
                     <div class="row">
                         <!-- /.col-lg-6 (nested) -->
                         <div class="col-lg-6">
-                            <form role="form" method="post" action="<?= Index ?>ArticleController/addArticleAction">
+                            <form role="form" method="post" action="<?= Index ?>ArticleController/addArticleAction" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label>title</label>
                                     <input name="title" class="form-control" >

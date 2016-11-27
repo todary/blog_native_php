@@ -13,8 +13,7 @@ define("CONTROLLERS_DIR",__DIR__.DS."controllers");
 define("LIBS_DIR",__DIR__.DS."libs");
 define("MODELS_DIR",__DIR__.DS."models");
 define("VIEW_DIR",__DIR__.DS."views");
-define("CSS",__DIR__.DS."css");
-define("JS",__DIR__.DS."js");
+define("CDN",__DIR__.DS."cdn");
 
 
 //define("CLASS_OBJECT","Courses");
